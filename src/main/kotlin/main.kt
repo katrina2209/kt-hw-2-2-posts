@@ -51,7 +51,62 @@ data class Post(
     val markedAsAds: Boolean, // Информация о том, содержит ли запись отметку «реклама»
     val isFavorite: Boolean, // true, если объект добавлен в закладки у текущего пользователя
     val donut: Boolean, // Donut, // Информация о записи VK Donut
-    val postponedId: Int // Идентификатор отложенной записи. Это поле возвращается тогда, когда запись стояла на таймере
+    val postponedId: Int, // Идентификатор отложенной записи. Это поле возвращается тогда, когда запись стояла на таймере
+    val postSource: PostSource?,
+    val geo: Geo,
+    val copyHistory: Array <Post>?
+) {
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is Post) return false
+
+        if (id != other.id) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        return id
+    }
+}
+
+
+data class Geo(
+    val type: String, // тип места;
+    val coordinates: String, //  координаты места;
+    val place: Place?, //описание места (если оно добавлено)
+)
+
+data class Place(
+    val id: Int, // Идентификатор места
+    val title: String, // Название места
+    val latitude: Int, // Географическая широта, заданная в градусах (от -90 до 90).
+    val longitude: Int, // Географическая широта, заданная в градусах (от -90 до 90).
+    val created: Int, // Дата создания места в Unixtime.
+    val icon: String, // Иконка места, URL изображения.
+    val checkins: Int, // Число отметок в этом месте.
+    val updated: Int, // Дата обновления места в Unixtime.
+    val type: Int, // Тип места.
+    val country: Int, // Идентификатор страны.
+    val city: Int, // Идентификатор города.
+    val address: String // Адрес места.
+)
+
+data class PostSource(
+    val type: String, // Тип источника. Возможные значения:
+//vk — запись создана через основной интерфейс сайта https://vk.com/;
+//widget — запись создана через виджет на стороннем сайте;
+//api — запись создана приложением через API;
+//rss — запись создана посредством импорта RSS-ленты со стороннего сайта;
+//sms — запись создана посредством отправки SMS-сообщения на специальный номер.
+    val platform: String, // Название платформы, если оно доступно. Возможные значения: android; iphone; wphone
+    val data: String, //Тип действия (только для type = vk или widget). Возможные значения:
+//profile_activity — изменение статуса под именем пользователя (для type = vk);
+//profile_photo — изменение профильной фотографии пользователя (для type = vk);
+//comments — виджет комментариев (для type = widget);
+//like — виджет «Мне нравится» (для type = widget);
+//poll — виджет опросов (для type = widget).
+    val url: String, // URL ресурса, с которого была опубликована запись.
 )
 
 //data class Comments(
