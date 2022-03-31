@@ -32,7 +32,8 @@ class WallServiceTest {
             postponedId = 54,
             postSource = null,
             geo = Geo("", "", null),
-            copyHistory = null
+            copyHistory = null,
+            attachments = null
         )
         val service = WallService()
         service.add(newPost)
@@ -72,7 +73,8 @@ class WallServiceTest {
                 postponedId = 54,
                 postSource = null,
                 geo = Geo("", "", null),
-                copyHistory = null
+                copyHistory = null,
+                attachments = null
             )
         )
         service.add(
@@ -103,7 +105,8 @@ class WallServiceTest {
                 postponedId = 54,
                 postSource = null,
                 geo = Geo("", "", null),
-                copyHistory = null
+                copyHistory = null,
+                attachments = null
             )
         )
         service.add(
@@ -134,7 +137,8 @@ class WallServiceTest {
                 postponedId = 54,
                 postSource = null,
                 geo = Geo("", "", null),
-                copyHistory = null
+                copyHistory = null,
+                attachments = null
             )
         )
 
@@ -165,7 +169,8 @@ class WallServiceTest {
             postponedId = 54,
             postSource = null,
             geo = Geo("", "", null),
-            copyHistory = null
+            copyHistory = null,
+            attachments = null
         )
 
         val result = service.update(update)
@@ -206,7 +211,8 @@ class WallServiceTest {
                 postponedId = 54,
                 postSource = null,
                 geo = Geo("", "", null),
-                copyHistory = null
+                copyHistory = null,
+                attachments = null
             )
         )
         service.add(
@@ -237,7 +243,8 @@ class WallServiceTest {
                 postponedId = 54,
                 postSource = null,
                 geo = Geo("", "", null),
-                copyHistory = null
+                copyHistory = null,
+                attachments = null
             )
         )
         service.add(
@@ -268,7 +275,8 @@ class WallServiceTest {
                 postponedId = 54,
                 postSource = null,
                 geo = Geo("", "", null),
-                copyHistory = null
+                copyHistory = null,
+                attachments = null
             )
         )
 
@@ -299,7 +307,8 @@ class WallServiceTest {
             postponedId = 54,
             postSource = null,
             geo = Geo("", "", null),
-            copyHistory = null
+            copyHistory = null,
+            attachments = null
         )
 
         val result = service.update(update)
