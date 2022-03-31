@@ -1,4 +1,9 @@
 fun main() {
+    var attachmentsArray = emptyArray<Attachments>()
+    val photo = Attachments.PhotoAttachment (Photo())
+    val video = Attachments.VideoAttachment (Video())
+    attachmentsArray += photo
+    attachmentsArray += video
 }
 
 
