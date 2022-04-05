@@ -1,13 +1,10 @@
-abstract class Attachments {
-    abstract val type: String
+sealed class Attachments(val type: String) {
+data class PhotoAttachment(val photo: Photo) : Attachments("Photo")
+data class VideoAttachment(val video: Video) : Attachments("Video")
+data class FileAttachment(val file: File) : Attachments("File")
+data class AudioAttachment(val audio: Audio) : Attachments("Audio")
+data class LinkAttachment(val link: Link) : Attachments("Link")
 }
-
-data class PhotoAttachment(override val type: String = "Photo", val photo: Photo = Photo()) : Attachments()
-data class VideoAttachment(override val type: String = "Video", val video: Video = Video()) : Attachments()
-data class FileAttachment(override val type: String = "File", val file: File = File()) : Attachments()
-data class AudioAttachment(override val type: String = "Audio", val audio: Audio = Audio()) : Attachments()
-data class LinkAttachment(override val type: String = "Link", val link: Link = Link()) : Attachments()
-
 data class Photo(
     val id: Int = 0, // Идентификатор фотографии.
     val albumId: Int = 0, // Идентификатор альбома, в котором находится фотография.
