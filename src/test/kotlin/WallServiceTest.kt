@@ -107,6 +107,7 @@ class WallServiceTest {
                 geo = Geo("", "", null),
                 copyHistory = null,
                 attachments = null
+
             )
         )
         service.add(
@@ -277,7 +278,7 @@ class WallServiceTest {
                 geo = Geo("", "", null),
                 copyHistory = null,
                 attachments = null
-            )
+)
         )
 
         val update = Post(
@@ -309,6 +310,7 @@ class WallServiceTest {
             geo = Geo("", "", null),
             copyHistory = null,
             attachments = null
+
         )
 
         val result = service.update(update)
