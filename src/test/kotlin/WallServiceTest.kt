@@ -35,9 +35,9 @@ class WallServiceTest {
             copyHistory = null
         )
         val service = WallService()
-        service.add(newPost)
+
         val unexpectedResult = 0
-        assertNotEquals(unexpectedResult, newPost.id)
+        assertNotEquals(unexpectedResult, service.add(newPost).id)
     }
 
 
