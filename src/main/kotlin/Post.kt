@@ -24,7 +24,11 @@ data class Post(
     val markedAsAds: Boolean, // Информация о том, содержит ли запись отметку «реклама»
     val isFavorite: Boolean, // true, если объект добавлен в закладки у текущего пользователя
     val donut: Boolean, // Donut, // Информация о записи VK Donut
-    val postponedId: Int // Идентификатор отложенной записи. Это поле возвращается тогда, когда запись стояла на таймере
+    val postponedId: Int, // Идентификатор отложенной записи. Это поле возвращается тогда, когда запись стояла на таймере
+    val postSource: PostSource?,
+    val geo: Geo,
+    val copyHistory: Array<Post>?,
+    val attachments: Array<Attachments>?
 )
 
 //data class Comments(
@@ -69,3 +73,4 @@ data class Post(
 //)
 //
 //class Placeholder
+
